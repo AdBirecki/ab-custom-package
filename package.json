@@ -1,0 +1,24 @@
+{
+  "name": "ab-custom-package",
+  "version": "0.0.1",
+  "description": "my-cutom-package-test",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": " rm",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdBirecki/ab-custom-package.git"
+  },
+  "author": "AB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdBirecki/ab-custom-package/issues"
+  },
+  "homepage": "https://github.com/AdBirecki/ab-custom-package#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
