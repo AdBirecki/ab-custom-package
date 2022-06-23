@@ -3,8 +3,10 @@
   "tasks": [
     {
       "type": "shell",
-      "problemMatcher": ["$tsc"],
-      "command": "tsc",
+      "problemMatcher": [
+        "$tsc"
+      ],
+      "command": "tsc.cmd",
       "group": "build",
       "label": "tsc: build"
     }
