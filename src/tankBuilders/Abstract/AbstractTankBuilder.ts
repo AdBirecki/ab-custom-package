@@ -16,7 +16,7 @@ export enum TankType {
 }
 
 export interface AbstractTankBuilder {
-    initializeBuild(tank: string): this;
+    initializeBuild(tank: Function): this;
     buildChassis(): this;
     buildTurret(): this;
     buildCannon(): this;

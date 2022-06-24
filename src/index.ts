@@ -1,6 +1,7 @@
 import { ArmoredCar } from "./cars/ArmoredCar";
 import { MyClass } from "./modules/module";
 import { RussianTankBuilder } from "./tankBuilders/Abstract/russianTankBuilder/RussianTankBuilder";
+import AbstractTank from "./tanks/Abstract/AbstractTank";
 import T72Tank from "./tanks/Russian/NiznyTagil/T72";
 
 console.log('log1!')
@@ -14,6 +15,12 @@ console.log(typeName);
 
 const russianTankBuilder = new RussianTankBuilder();
 //type NewType = ReturnType();
+T72Tank.constructor
+console.log(T72Tank);
+console.log(T72Tank.constructor);
+console.log(T72Tank instanceof AbstractTank);
+console.log(typeof T72Tank);
 
 
-russianTankBuilder.initializeBuild(T72Tank.name);
+T72Tank
+russianTankBuilder.initializeBuild(T72Tank);
