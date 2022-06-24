@@ -12,7 +12,7 @@ export class RussianTankBuilder implements AbstractTankBuilder {
 
     private underConstruction: Partial<AbstractTank> | null = null;
 
-    initializeBuild(type: Function & { constructor: () => {} }): this {
+    initializeBuild(type: Function): this {
         this.cleanTankState();
         switch (type) {
             case T64Tank:

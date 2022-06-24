@@ -3,6 +3,7 @@ import { MyClass } from "./modules/module";
 import { RussianTankBuilder } from "./tankBuilders/Abstract/russianTankBuilder/RussianTankBuilder";
 import AbstractTank from "./tanks/Abstract/AbstractTank";
 import T72Tank from "./tanks/Russian/NiznyTagil/T72";
+import test from "./typeModule";
 
 console.log('log1!')
 MyClass.introduce();
@@ -21,6 +22,6 @@ console.log(T72Tank.constructor);
 console.log(T72Tank instanceof AbstractTank);
 console.log(typeof T72Tank);
 
-
-T72Tank
 russianTankBuilder.initializeBuild(T72Tank);
+
+test();
