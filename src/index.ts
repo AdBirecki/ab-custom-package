@@ -1,9 +1,10 @@
+import { testAsync, testPaSyncPromise } from "./asyncModule";
 import { ArmoredCar } from "./cars/ArmoredCar";
 import { MyClass } from "./modules/module";
 import { RussianTankBuilder } from "./tankBuilders/Abstract/russianTankBuilder/RussianTankBuilder";
 import AbstractTank from "./tanks/Abstract/AbstractTank";
 import T72Tank from "./tanks/Russian/NiznyTagil/T72";
-import test from "./typeModule";
+import { test, omitTest } from "./typeModule";
 
 console.log('log1!')
 MyClass.introduce();
@@ -24,4 +25,12 @@ console.log(typeof T72Tank);
 
 russianTankBuilder.initializeBuild(T72Tank);
 
-test();
+//omitTest();
+//test();
+//testAsync();
+
+const runAsync = async () => {
+    const value = await testPaSyncPromise(2000, 'test data');
+    console.log(value);
+}
+runAsync();

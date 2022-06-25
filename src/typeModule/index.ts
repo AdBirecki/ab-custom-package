@@ -24,13 +24,37 @@ class Dict<T> {
 }
 
 class Entry<T> {
-    constructor(data: T) {
+    constructor(data: T, name = null) {
         this.data = data;
+        this.name = name;
     }
-    data?: T;
+
+    data: T;
+    name: string | null;
     toString(): string {
         return JSON.stringify(this.data);
     }
+}
+
+class BaseEntry {
+}
+class OmitEntry<T> extends BaseEntry {
+    constructor(public data: T, public tetriary = 'string') {
+        super();
+        this.data = data;
+    }
+    static GetInstance<U>(data: U): SubEntry<U> {
+        return new OmitEntry<U>(data);
+    }
+}
+
+type SubEntry<T> = Omit<Entry<T>, 'name' | 'toString'>
+
+
+function omitTest() {
+    //const subEmit = BaseEntry.GetInstance<string>('dane');
+    const subEmit2 = OmitEntry.GetInstance({ datacall: 'datacall' });
+    console.log(subEmit2.data)
 }
 
 function test() {
@@ -48,4 +72,4 @@ function test() {
     }
 }
 
-export default test
+export { test, omitTest }
