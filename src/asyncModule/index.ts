@@ -11,13 +11,13 @@ const testAsync = async () => {
     // const res = await testPaSyncPromise();
 }
 
-const asyncPromise = <T>(delay: number, returnValue: T, cb: (err: any, value: T) => void) => {
+const callbackWrapper = <T>(delay: number, returnValue: T, cb: (err: any, value: T) => void) => {
     setTimeout(() => {
         cb(null, returnValue);
     }, delay);
 }
 
-const pAsyncPromise = promisify(asyncPromise);
+const pAsyncPromise = promisify(callbackWrapper);
 
 const testPaSyncPromise = async <T>(delay: number, value: T) => {
     const result = await pAsyncPromise(delay, value)
